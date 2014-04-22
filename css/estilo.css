@@ -35,7 +35,6 @@ body {
 
 
 body:before {
-	content: url(images/select-opacity.png) url(images/menu_opciones_bg.png);
 	display:none;}
 
 .body_completo {
@@ -667,9 +666,10 @@ height: auto;}
 /* Oferta autos */
 /*-----------------------------------*/
 .oferta_autos {
-	width:470px;
+	width:500px;
 	height:auto;
 	float:left;
+	margin-left: 10px;
 	position:relative;}
 .oferta_autos .metiche{
 display: inline-block;
@@ -694,7 +694,7 @@ display: inline-block;
 	-webkit-border-radius:3px 0 0 0}
 
 .ficha_tecnica {
-	width:130px;
+	width:160px;
 	height:114px;
 	padding:10px 13px;
 	float:left;
@@ -922,19 +922,6 @@ display: inline-block;
 	text-transform:none;
 	font-size:12px}
 
-/* subscribe_btn */
-.subscribe_btn {
-	text-align:center;}
-.subscribe_btn .btn {
-	margin:5px auto}
-
-/* facebook_box */
-.facebook_box {
-	background:#fff;
-	padding:5px 6px;
-	width:270px;
-	margin:0 auto 20px auto;
-	overflow:hidden}
 
 /* widget_nav_menu  */
 .widget_nav_menu ul,
@@ -1022,47 +1009,10 @@ display: inline-block;
 	color:#3f4b56;}
 
 
-/* widget_search */	
-.content .contenedor_rpm.widget_search {
-	width:250px}
-	
-.widget_search label, .widget_search cite, .widget_search .screen-reader-text {
-	display:none}
-
-.content .widget_search form {
-	position:relative;	
-	background:#fff;
-	border-bottom:3px solid #ced6db;
-	border-radius:0 0 3px 3px;
-	-webkit-border-radius:0 0 3px 3px;
-	padding:15px}
-
-.widget_search input {
-	float:left;
-	margin:0}
-	
-.widget_search .inputField {	
-	width:164px;
-	padding-right:40px}
-
-.sidebar .box .widget_search .inputField {
-	background-color:#fff}
-
-.widget_search input.btn-submit {
-	margin:2px 0 0 -32px;
-	width:30px;
-	height:30px;
-	border:1px solid #d5d5d5;
-	border-radius:3px;
-	-webkit-border-radius:3px;
-	background:url(images/icons/icon_search.png) center center no-repeat;
-	background-color:#f25720;
-	border-color:#d16546 #ca4e2a #ca5d3d #ca4e2a;
-	overflow:hidden;
-	text-indent:-500px;
-	-webkit-appearance:none;}
-
-
+.titulo_secciones{
+	color: #C90F02;
+	margin-left: 10px;
+}
 
 
 
