@@ -12,6 +12,8 @@
 
 <link href="css/estilo.css" media="screen" rel="stylesheet">
 <link href="css/screen.css" media="screen" rel="stylesheet">
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+
 
 
 
@@ -122,7 +124,7 @@
 	                	
 	                            
 	                        </li>	                        
-                            <li class="menu_nivel_1"><a href="#"><span>Vehículos</span></a>
+                            <li class="menu_nivel_1"><a href="#"><span>Mensualidades</span></a>
 	                        
 							</li>
 	                        <li class="menu_nivel_1"><a href="#"><span>Contacto</span></a>
@@ -278,15 +280,31 @@
                </div>	
        	
 	</div>
-	
-	
-    <!--tipos de autos -->
-	
-    <!--/ tipos de autos -->
-    
-	<!-- ultimas ofertas -->
-	<div class="zona_autos franja_blanca">
+
+	<div class="zona_autos franja_blanca clearfix">
 		<h2 class="titulo_secciones">Calcula las mensualidades. </h2>
+        
+        <form class="formulario_pago">
+            
+            <input class="costo" id=""name="precio" alt="precio" placeholder="Precio" required/>
+     
+
+            <select class="form-control control_select">
+                <option>Mensualidades</option>
+                <option>6 meses</option>
+                <option>6 meses</option>
+                <option>6 meses</option>
+
+            </select>
+            <button type="button" class="btn btn-danger btn-lg"id="" value="calcular" >Calcular</button>
+
+            
+        </form>
+        
+          <section class="oferta_pago metiche2">
+               <figure> <img src="img/temp/service_2.jpg"/></figure>
+          </section>
+       
 	</div>
     
     <!-- marcas populares -->

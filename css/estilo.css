@@ -674,6 +674,9 @@ height: auto;}
 .oferta_autos .metiche{
 display: inline-block;
 }
+.oferta_autos :hover{
+	box-shadow: 3px 3px 2px #888;
+}
 .autos_item {
 	height:134px;
 	border-bottom:4px solid rgb(254,147,115);
@@ -682,6 +685,7 @@ display: inline-block;
 	margin-bottom:8px;
 	margin-right: 8px;
 }
+
 
 .autos_imagen {
 	width:300px;
@@ -694,8 +698,8 @@ display: inline-block;
 	-webkit-border-radius:3px 0 0 0}
 
 .ficha_tecnica {
-	width:160px;
-	height:114px;
+	width:190px;
+	height:130px;
 	padding:10px 13px;
 	float:left;
 	background:#fff;}
@@ -1014,5 +1018,37 @@ display: inline-block;
 	margin-left: 10px;
 }
 
+ /* FORMLARIO COSTOS*/
 
+.costo{
+border-radius: 5px;
+height: 20px;
+margin: 1em 2em 3em 1em;
+padding: 5px 10px 20px 10px;
+width: 300px;
+}
+
+.control_select{
+margin-left: 8px;
+
+}
+.formulario_pago{
+	margin: 1em 3em 2em 2em;
+	width: 40%;
+
+
+}
+
+.oferta_pago{
+  width: 500px;
+  margin-left: 7em;
+
+
+}
+
+.formulario_pago, .metiche2{
+  display: inline-block;
+  vertical-align: top;
+
+}
 
