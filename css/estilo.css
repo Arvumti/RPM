@@ -272,18 +272,18 @@ h1 span, h2 span, h3 span ,h4 span, h5 span, h6 span {
 	height:20px;
 	text-decoration:none}
 
-.menu_opciones .menu-level-0.last {
+.menu_opciones .menu_nivel_0.last {
 	margin:0}
-.menu_opciones .menu-level-0.last a {
+.menu_opciones .menu_nivel_0.last a {
 	background:url(images/opacity_white_30.png) left repeat-y;
 	padding-left:22px;
 	color:#39b4ed;}
 
-.menu_opciones .menu-level-0.last a span {
+.menu_opciones .menu_nivel_0.last a span {
 	background:url(images/icons/icon_location.png) right 0 no-repeat;
 	padding-right:25px}
 
-.menu_opciones .menu-level-0.last:hover a {
+.menu_opciones .menu_nivel_0.last:hover a {
 	color:#39b4ed;}
 
 .menu_opciones li a span {
@@ -341,13 +341,14 @@ h1 span, h2 span, h3 span ,h4 span, h5 span, h6 span {
 	text-shadow: none;}
 
 .menu_opciones li ul.submenu-1 {
+	background: rgba(153,3,8,0.6);
 	display:none;
 	position: absolute;
 	top: 20px;
 	left:0;
 	z-index: 1308;		
 	padding:20px 0 0 0;
-	max-width:950px}
+	max-width:950px;}
 
 .menu_opciones li.parentHover {
 	background:url(images/menu_opciones_sub.png) center bottom no-repeat}
