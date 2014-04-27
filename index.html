@@ -34,7 +34,24 @@
 <link href="rs-plugin/css/settings.css" media="screen" rel="stylesheet">
 <script src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
 <script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.totemticker.js"></script>
+   
+    <script type="text/javascript">
+        $(function(){
+            $('#vertical-ticker').totemticker({
+                row_height  :   '100px',
+                next        :   '#ticker-next',
+                previous    :   '#ticker-previous',
+                stop        :   '#stop',
+                start       :   '#start',
+                mousestop   :   true,
+            });
+        });
+    </script>
+<script type="text/javascript">
 
+</script>
 </head>
 
 <body>
@@ -278,26 +295,120 @@
                             <div class="precio_auto">$32233.690</div>
                         </div>
                     </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_3.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_3.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_3.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_3.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_3.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
+                         <div class="autos_item">
+                        <div class="autos_imagen">
+                        <a href="#"><img src="img/temp/special_offer_2.jpg" alt=""></a>
+                        </div>
+                        <div class="ficha_tecnica">
+                            <h3><a href="#">Mercedes CLA 220d</a></h3>
+                            <div class="datos_auto_fila"><span>Fecha:</span> FEB 2013</div>
+                            <div class="datos_auto_fila"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+                            <div class="datos_auto_fila"><span>Kilometraje</span> 170,443</div>
+                            <div class="precio_auto">$32233.690</div>
+                        </div>
+                    </div>
                </div>	
-       	
+       	       <section class="columna_derecha metiche">
+                   <ul id="vertical-ticker">
+                        <li>Oferta 1</li>
+                        <li>Otros</li>
+                        <li><img src="img/temp/special_offer_3.jpg" alt=""></li>
+                        <li><img src="img/rpmlogo.png" alt=""></li>
+                        <li>Eenie Meenie</li>
+                        <li>Never Say Never</li>
+                        <li>U Smile</li>
+                        <li>U Smile</li>
+                        <li>U Smile</li>
+                        <li>U Smile</li>
+
+
+                     </ul>
+
+
+
+               </section>
 	</div>
 
 	<div class="zona_autos franja_blanca clearfix">
 		<h2 class="titulo_secciones">Calcula las mensualidades. </h2>
         
-        <form class="formulario_pago">
+        <form name="formu" class="formulario_pago">
             
-            <input class="costo" id=""name="precio" alt="precio" placeholder="Precio" required/>
+            <input type="Text"class="costo form-control" id="txtCosto"name="txtCosto" placeholder="Escriba el Precio del auto" required/>
      
 
-            <select class="form-control control_select">
+            <select id="sltMensualidad" name="sltMensualidad"class="form-control control_select">
                 <option>Mensualidades</option>
-                <option>6 meses</option>
-                <option>6 meses</option>
-                <option>6 meses</option>
+                <option value="12">12 </option>
+                <option value="15">15 </option>
+                <option value="18">18 </option>
+                <option value="24">24 </option>
+                <option value="30">30 </option>
+                <option value="36">36 </option>
+
 
             </select>
-            <button type="button" class="btn btn-danger btn-lg"id="" value="calcular" >Calcular</button>
+            <button type="button" class="btn btn-danger btn-lg"id="btnCalcular">Calcular</button>
 
             
         </form>
@@ -310,9 +421,9 @@
     
     <!-- marcas populares -->
 	<div class="zona_autos zona_gris lista_marcas">
-		<div class="container">
+		
 	            <h2 class="titulo_secciones">MARCAS POPULARES:</h2>
-	            <ul>
+	            <ul class="marcas_ul">
 	            	<li><a href="#"><img src="img/temp/marca_logo_1.png" alt=""></a></li>
                     <li><a href="#"><img src="img/temp/marca_logo_2.png" alt=""></a></li>
                     <li><a href="#"><img src="img/temp/marca_logo_3.png" alt=""></a></li>
@@ -322,8 +433,7 @@
                     <li><a href="#"><img src="img/temp/marca_logo_7.png" alt=""></a></li>
                     <li><a href="#"><img src="img/temp/marca_logo_8.png" alt=""></a></li>
 	            </ul>
-	          
-        </div>
+	 
 	</div>
     <!--/ marcas -->
     

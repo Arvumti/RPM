@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Image d&eacute;filante</title>
+    <link rel="stylesheet" type="text/css" href="map_style.css"/>
+</head>
+<body onload="start()">
+    <canvas id="jeu" width="800" height="450">  
+    </canvas>
+    <img id="voiture" class="voiture" src="car.png" onload="startTimerCar()">
+    <img id="voiture2" class="voiture" src="car.png" onload="startTimerCar()">
+    <img id="voiture3" class="voiture" src="car.png" onload="startTimerCar()">
+    <img id="bigrig" class="bigrig" src="bigrig.png" onload="startTimerBigrig()">
+    <img id="bigrig2" class="bigrig" src="bigrig.png" onload="startTimerBigrig()">
+    <img id="bigrig3" class="bigrig" src="bigrig.png" onload="startTimerBigrig()">
+    <img id="hotrod" src="hotrod.png" onload="startTimerHotrod()">
+    <img id="hotrod2" src="hotrod.png" onload="startTimerHotrod()">
+    <img id="turtle" src="turtles_diving.png" onload="startTimerTurtle()">
+    <img id="turtle2" src="turtles_diving.png" onload="startTimerTurtle()">
+    <img id="turtle3" src="turtles_diving.png" onload="startTimerTurtle()">
+    <img id="small" src="log_small.png" onload="startTimerSmall()">
+    <img id="small2" src="log_small.png" onload="startTimerSmall()">
+    <img id="small3" src="log_small.png" onload="startTimerSmall()">
+    <img id="small4" src="log_small.png" onload="startTimerSmall()">
+    <img id="med" src="log_medium.png" onload="startTimerMedium()">
+    <img id="med2" src="log_medium.png" onload="startTimerMedium()">
+    <img id="med3" src="log_medium.png" onload="startTimerMedium()">
+
+    <script type="text/javascript">
+    var X = 1;
+    var timer;
+    function start(){
+        setInterval(init,10);
+        document.onkeydown =  move;
+        var canvas = document.getElementById('jeu');
+        var context = canvas.getContext('2d');
+        var frog = document.getElementById('frog');
+        var posX_frog = 415;
+        var posY_frog = 400;
+        var voiture = [document.getElementById('voiture'),document.getElementById('voiture2'),document.getElementById('voiture3')];
+        var bigrig = [document.getElementById('bigrig'),document.getElementById('bigrig2'),document.getElementById('bigrig3')];
+        var hotrod = [document.getElementById('hotrod'),document.getElementById('hotrod2')];
+        var turtle = [document.getElementById('turtle'),document.getElementById('turtle2'),document.getElementById('turtle3')];
+        var small = [document.getElementById('small'),document.getElementById('small2'),document.getElementById('small3'),document.getElementById('small4')];
+        var med = [document.getElementById('med'),document.getElementById('med2'),document.getElementById('med3')];
+
+        function init() {
+            context.fillStyle = "#AEEE00";
+            context.fillRect(0,0,800,50);
+            context.fillRect(0,200,800,50);
+            context.fillRect(0,400,800,50);
+            context.fillStyle = "#046380";
+            context.fillRect(0,50,800,150);
+            context.fillStyle = "#000000";
+            context.fillRect(0,250,800,150); 
+
+            var img= new Image();
+            img.src="./frog.png";
+            context.drawImage(img,posX_frog, posY_frog, 46, 38);
+        }   
+
+        function move(event){
+            if (event.keyCode == 39){
+                if( posX_frog < 716 ){
+                    posX_frog += 50;
+                }   
+            } 
+            if(event.keyCode == 37){
+                if( posX_frog >25 ){  
+                    posX_frog -= 50;  
+                } 
+            }
+            if (event.keyCode == 38){  
+                if( posY_frog > 10 ){
+                    posY_frog -= 50;
+                } 
+            }
+            if(event.keyCode == 40){  
+                if( posY_frog <400  ){
+                    posY_frog += 50; 
+                }
+            }
+        }   
+    }
+
+    </script>
+</body>
