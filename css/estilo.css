@@ -652,7 +652,7 @@ h1 span, h2 span, h3 span ,h4 span, h5 span, h6 span {
 
 
 .zona_autos.franja_blanca {
-	background:#fff}
+	background:url("../img/backpat.jpg");}
 
 .zona_autos.zona_gris {
 	background:#f0f3f5;
@@ -726,6 +726,31 @@ display: inline-block;
 	color:#39b4ed}
 
 .ficha_tecnica h3 a:hover {
+	color:#f25821;}
+
+
+.ficha_tecnica_autos {
+	width:590px;
+	height:330px;
+	padding:10px 13px;
+	float:left;
+	}
+
+.ficha_tecnica_autos h3 {
+	font-size:20px;
+	text-align:center;
+	margin:0;
+	padding-bottom:10px;
+	border-bottom:1px solid #e9e9e9;
+	display:block;
+	line-height:1.1em;
+	overflow:hidden;
+	white-space:nowrap}
+
+.ficha_tecnica_autos h3 a {
+	color:#39b4ed}
+
+.ficha_tecnica_autos h3 a:hover {
 	color:#f25821}
 	
 .datos_auto_fila {
@@ -739,10 +764,26 @@ display: inline-block;
 .datos_auto_fila span {
 	float:left;}
 
+.datos_auto_fila_2 {
+	border-bottom:1px solid #e9e9e9;
+	line-height:22px;
+	color:#8e959b;
+	font-size:20px;
+	text-align:right;
+	position:relative;}
+
+.datos_auto_fila_2 span {
+	float:left;}
+
 .precio_auto {
 	text-align:center;
 	color:#f25821;
 	padding-top:2px}
+	.precio_auto_2 {
+	text-align:center;
+	color:#f25821;
+	padding-top:2px;
+font-size: 25px;}
 
 .oferta_autos .prev, .oferta_autos .next {
 	display:block;
@@ -1096,6 +1137,29 @@ margin-left: 8px;
 #frameless {padding:0}
 #frameless .tclose {left:6px;}
 
-
-
 .flexslider{margin:0;background:#fff;border:none;position:relative;-webkit-border-radius:0px;-moz-border-radius:0px;-o-border-radius:0px;border-radius:0px;box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);-moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);-o-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);zoom:1;}
+
+/* FOOTER RPM */
+
+#footer_rpm{
+border-top: 3px solid  #e74c3c;
+background: url("../img/fondo.jpg");	
+
+}
+.caja_info{
+background-color: #f0f3f5;
+border: 1px solid  #e74c3c;
+border-radius: 3px;
+box-shadow: 3px 3px 2px #888;
+height: 4em;
+margin: 1em 1.5em 3em 2em;
+width: 20em;
+display: inline-block;
+vertical-align: top;
+}
+
+
+
+
+
+

@@ -33,9 +33,7 @@
 <link rel="stylesheet" href="css/cusel.css">
 <script src="js/cusel-min.js"></script>
 
-<link href="rs-plugin/css/settings.css" media="screen" rel="stylesheet">
-<script src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-<script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.totemticker.js"></script>
    
@@ -70,7 +68,7 @@
                 	<li class="menu_nivel_0 current-menu-ancestor"><a href="#"><span>Inicio</span></a>
 						
 					</li>                                                                            
-					<li class="menu_nivel_0"><a href="#"><span>Autos</span></a>
+					<li class="menu_nivel_0"><a href="#autos"><span>Autos</span></a>
                     	
                     </li>       
                     <li class="menu_nivel_0 mega-nav"><a href="#"><span>Servicios</span></a>
@@ -139,14 +137,14 @@
 							</li>												
 						</ul>  
                     </li>
-	                <li class="menu_nivel_0 mega-nav"><a href="#"><span>Acerca de </span></a>
+	                <li class="menu_nivel_0 mega-nav"><a href="#"><span>Acerca de</span></a>
 	                	
 	                            
 	                        </li>	                        
-                            <li class="menu_nivel_1"><a href="#"><span>Mensualidades</span></a>
+                            <li class="menu_nivel_1"><a href="#mensualidades"><span>Mensualidades</span></a>
 	                        
 							</li>
-	                        <li class="menu_nivel_1"><a href="#"><span>Contacto</span></a>
+	                        <li class="menu_nivel_1"><a href="contacto.html"><span>Contacto</span></a>
 	                         
 							</li>                        	                                                                    
 	                    </ul>
@@ -177,8 +175,8 @@
 <div class="zona_autos zona_gris clearfix">
 	
 	     
-            <h2 class="titulo_secciones">Ofertas especiales</h2>
-            <div class="oferta_autos">
+            <h2 class="titulo_secciones">Nuestros Autos</h2>
+           <a name="autos"> <div class="oferta_autos"></a>
                 <div class="autos_item">
                     	<div class="autos_imagen" onclick="TINY.box.show({iframe:'autos.html',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})">
                     	   <a href="#"><img src="img/temp/special_offer_1.jpg" alt=""></a>
@@ -193,7 +191,7 @@
                 </div>
                     
                     <div class="autos_item">
-                    	<div class="autos_imagen" onclick="TINY.box.show({iframe:'autos.html',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})">>
+                    	<div class="autos_imagen" onclick="TINY.box.show({iframe:'autos.html',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})">
                     	<a href="#"><img src="img/temp/special_offer_2.jpg" alt=""></a>
                         </div>
                         <div class="ficha_tecnica">
@@ -390,16 +388,16 @@
                </section>
 	</div>
 
-	<div class="zona_autos franja_blanca clearfix">
+	<a name="mensualidades"><div class="zona_autos franja_blanca clearfix"></a>  
 		<h2 class="titulo_secciones">Calcula las mensualidades. </h2>
-        
-        <form name="formu" class="formulario_pago">
+      
+        <form id="calculo" name="calculo" action="meses.php" method="post" class="formulario_pago">
             
-            <input type="Text"class="costo form-control" id="txtCosto"name="txtCosto" placeholder="Escriba el Precio del auto" required/>
+            <input id="txtCosto"name="txtCosto"type="Text"class="costo form-control"  placeholder="Escriba el Precio del auto" required/>
      
 
-            <select id="sltMensualidad" name="sltMensualidad"class="form-control control_select">
-                <option>Mensualidades</option>
+            <select id="sltMeses" name="sltMeses"class="form-control control_select">
+                <option>Seleccione las mensualidades</option>
                 <option value="12">12 </option>
                 <option value="15">15 </option>
                 <option value="18">18 </option>
@@ -409,7 +407,7 @@
 
 
             </select>
-            <button type="button" class="btn btn-danger btn-lg"id="btnCalcular">Calcular</button>
+            <input id="btnCalcular" class="btn btn-danger btn-lg" value="Calcular"/>
 
             
         </form>
@@ -442,12 +440,13 @@
     
 <!--/ mitad -->
 
-<footer>
-<article>
-Grupo Arvum División de TI</article>
-<article>
- 	<a href="http://arvumti.com/"> www.arvumti.com </a>
+<footer id="footer_rpm">
+<article class="caja_info">
+<h5>Diseñado por: Grupo Arvum División de TI</h5><a href="http://arvumti.com/"> www.arvumti.com </a></article>
+<article class="caja_info">
+    
 </article>
+<article class="caja_info">Jesus valadez Villegas</section>
 </footer>
 <!--/ultimo div cuerpo-->
 </div>

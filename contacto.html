@@ -35,7 +35,6 @@
 <script src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
 <script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.totemticker.js"></script>
    
     
 
@@ -49,13 +48,14 @@
 				<a href="index.html"><img src="img/rpmlogo.png" alt=""></a>
 			</div>
 			
+	
 			<nav id="menu_principal" class="clearfix">            
 				
 				<ul class="menu_opciones">    
-                	<li class="menu_nivel_0 current-menu-ancestor"><a href="#"><span>Inicio</span></a>
+                	<li class="menu_nivel_0 current-menu-ancestor"><a href="index.html"><span>Inicio</span></a>
 						
 					</li>                                                                            
-					<li class="menu_nivel_0"><a href="#"><span>Autos</span></a>
+					<li class="menu_nivel_0"><a href="index.html#autos"><span>Autos</span></a>
                     	
                     </li>       
                     <li class="menu_nivel_0 mega-nav"><a href="#"><span>Servicios</span></a>
@@ -87,8 +87,7 @@
 											<div class="informacion_item_titulo"><a href="#">Precios Accesibles</a></div>
 											<div class="info_menu">Ofertas <span class="post-author">Gran venta</span></div>
 											<div class="imagen_menu"><a href="#"><img src="img/temp/featured_thumb_1.jpg" alt=""></a></div>
-										
-											
+													
 										</li>																		                    
 									</ul>										
 								</div>
@@ -102,7 +101,7 @@
 										<div class="info_servicios_menu clearfix">
 											<div class="img_avatar"><img src="img/temp/twitter_avatar.png" width="30" height="30" alt="" /></div>
 											<div class="texto_servicios">
-												<div class="inner">
+												<div class="informacion_item_titulo">
 												Disfruta del mejor servicio en Durango  <a href="#">Ir</a>
 											
 												</div>
@@ -112,8 +111,8 @@
 										<div class="info_servicios_menu clearfix">
 											<div class="img_avatar"><img src="img/temp/twitter_avatar.png" width="30" height="30" alt="" /></div>
 											<div class="texto_servicios">
-												<div class="inner">
-												Lorem ipsum dolor sit amet, consectetur adiping elit. Class aptent taciti sociosqu ad litora torquent per conubia nostr <a href="#">h</a>
+												<div class="texto_servicios">
+												Lorem ipsum dolor sit amet, consectetur adiping elit. Class aptent taciti sociosqu ad litora torquent per conubia nostr <a href="#"></a>
 												
 											  </div>
 											</div>
@@ -125,11 +124,11 @@
 							</li>												
 						</ul>  
                     </li>
-	                <li class="menu_nivel_0 mega-nav"><a href="#"><span>Acerca de </span></a>
+	                <li class="menu_nivel_0 mega-nav"><a href="#"><span>Acerca de</span></a>
 	                	
 	                            
 	                        </li>	                        
-                            <li class="menu_nivel_1"><a href="#"><span>Mensualidades</span></a>
+                            <li class="menu_nivel_1"><a href="index.html#mensualidades"><span>Mensualidades</span></a>
 	                        
 							</li>
 	                        <li class="menu_nivel_1"><a href="#"><span>Contacto</span></a>
@@ -139,7 +138,7 @@
 	                </li>
                    					                              
 				</ul>   
-			</nav>    
+			</nav>   
 		<!--/ menu_principal -->
 		</div>
 	</div>
@@ -162,26 +161,26 @@
     
     <p style="color:#C90F02; font-size:16px; margin-left:20px;">Apreciamos mucho tu interés en nuestros servicios, te invitamos a llenar el formulario para servirte como te mereces!.</p>
     
-    <form role="form" id="">
+    <form action="http://arvumti.com/rpm/contacto.php" method="post">
      <div class="form-group">
-        <input type="text" class="form-control" id="txtNombre" name="name" placeholder="Nombre">
+        <input id="nombre" type="text" name="nombre" class="form-control"   placeholder="Nombre" required=""/>
         <span class="help-block" style="display: none;">Ingresa tu nombre y apellido.</span>
     </div>
      <div class="form-group">
       
-        <input type="email" class="form-control" id="txtEmail" name="email" placeholder="Email">
+        <input id="email" type="email" name="email" class="form-control"   placeholder="Email" required=""/>
         <span class="help-block" style="display: none;">Ingresa tu e-mail.</span>
     </div>
 
      <div class="form-group">
       
-        <textarea rows="10" cols="300" class="form-control" id="txaMensaje" name="message" placeholder="Mensaje "></textarea>
+        <textarea id="mensaje" name="mensaje"  rows="10" cols="300" class="form-control" placeholder="Mensaje " required=""></textarea>
         <span class="help-block" style="display: none;">Por favor escribe aquí tu mensaje.</span>
     
-      <button type="submit" id="feedbackSubmit" class="btn btn-danger btn-lg" style="display: block; margin-top: 10px; margin-left:5px;">Enviar</button>
-    </form>
+      <input id="submit" type="submit"  name="submit" class="btn btn-danger btn-lg" value="Enviar"style="display: block; margin-top: 10px; margin-left:5px;"/>
+    
     </div>
-
+</form>
   </div><!--/span-->
 	     
        
@@ -209,12 +208,13 @@
     
 <!--/ mitad -->
 
-<footer>
-<article>
-Grupo Arvum División de TI</article>
-<article>
- 	<a href="http://arvumti.com/"> www.arvumti.com </a>
+<footer id="footer_rpm">
+<article class="caja_info">
+<h5>Diseñado por: Grupo Arvum División de TI</h5><a href="http://arvumti.com/"> www.arvumti.com </a></article>
+<article class="caja_info">
+ 	
 </article>
+<article class="caja_info">Jesus valadez Villegas</section>
 </footer>
 <!--/ultimo div cuerpo-->
 </div>
