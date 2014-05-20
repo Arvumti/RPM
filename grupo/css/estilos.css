@@ -1,0 +1,282 @@
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* GRUPO ARVUM IS ON THE FLOOR! AWWWW */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+body{
+	overflow-x: hidden;
+}
+a, a:hover, a:focus{
+	text-decoration: none;
+}
+a:focus { 
+    	outline: none; 
+}
+p{
+	color: #777;
+	font-family:"OpenSansRegular";
+	font-size: 14px;
+	line-height:21px;
+}
+@media (min-width: 1024px) and (max-width: 5000px) {
+	/*.contenedor, .service-details{
+		max-width: 990px;
+	}*/
+	.contenedor, .service-details{
+		width: 100%;
+	}
+}
+
+
+
+/*Padding y espaciamiento*/
+.add-top{
+	padding-top: 40px;
+}
+.add-bottom{
+	padding-bottom: 40px;
+}
+.add-top-half{
+	padding-top: 20px;
+}
+.add-bottom-half{
+	padding-bottom: 20px;
+}
+.pad-common{
+	padding: 50px;
+}
+
+.alinear-logo{
+	position:relative;
+	top:30%;
+	transform:translateY(-50%);
+}
+
+
+.nav-trigger.displace{
+	left: 200px;
+}
+#mastwrap{
+	margin-left: 0px;
+}
+#vertical-logo{
+	margin: 10px;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #333;
+	font-family:"MontserratRegular";
+	font-weight: normal;
+	margin-top: 95px;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    writing-mode: lr-tb;
+}
+#logo{
+	border-bottom:solid 1px #eee;
+}
+#logo > img{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+.main-heading{
+	font-weight: normal;
+	font-size:64px;
+	line-height:71px;
+font-family:"NexaLight";
+text-transform: uppercase;
+margin-top: 0;
+margin-bottom: 0;
+}
+.sub-heading{
+	font-size: 36px;
+	line-height:43px;
+font-family:"MontserratRegular";
+	font-weight: 100;
+	color: #aaa;
+}
+.sub-heading > span{
+font-family:"TexGyreHerosBold";
+}
+
+.query-heading{
+	font-size: 36px;
+	line-height:43px;
+font-family:"MontserratRegular";
+	font-weight: 100;
+	color: #aaa;
+}
+.query-heading > span{
+font-family:"TexGyreHerosBold";
+}
+.inner-heading{
+	font-family:"MontserratRegular";
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 24px;
+	line-height: 31px;
+}
+
+.liner-medium{
+	width: 36px;
+	height: 7px;
+	display: inline-block;
+}
+
+.liner-small{
+	width: 30px;
+	height: 5px;
+	display: block;
+	margin-top: 5px;
+}
+.parallax{
+	background-size: cover !important;
+	background-repeat: no-repeat;
+}
+
+
+
+/*Inicio*/
+.thumb-carousel-wrap{
+	background:#000;
+}
+.home-carousel  .item{
+	background:#fff;
+}
+.thumb-zoom{
+}
+.inicio-slide{
+	-webkit-transition: all .8s linear;
+	   -moz-transition: all .8s linear;
+		-ms-transition: all .8s linear;
+		 -o-transition: all .8s linear;
+			transition: all .8s linear;
+}
+
+
+
+
+
+
+#mastfoot{
+}
+.foot-top{
+	padding: 20px;
+	border-top: solid 1px #eee;
+}
+.foot-social{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.foot-social li{
+	display: inline-block;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.foot-social li a > img{
+	opacity: 0.3;
+	-webkit-transition: all .8s linear;
+	   -moz-transition: all .8s linear;
+		-ms-transition: all .8s linear;
+		 -o-transition: all .8s linear;
+			transition: all .8s linear;
+}
+.foot-social li a > img:hover{
+	opacity: 1;
+	-webkit-transition: all .8s linear;
+	   -moz-transition: all .8s linear;
+		-ms-transition: all .8s linear;
+		 -o-transition: all .8s linear;
+			transition: all .8s linear;
+}
+.handle{
+	font-size: 24px;
+	line-height: 31px;
+	color: #000;
+	font-family:"TexGyreHerosBold";
+	-webkit-transition: all .8s linear;
+	   -moz-transition: all .8s linear;
+		-ms-transition: all .8s linear;
+		 -o-transition: all .8s linear;
+			transition: all .8s linear;
+}
+
+.handle:hover{
+	-webkit-transition: all .8s linear;
+	   -moz-transition: all .8s linear;
+		-ms-transition: all .8s linear;
+		 -o-transition: all .8s linear;
+			transition: all .8s linear;
+}
+.credit-panel{
+	padding: 20px;
+}
+.credit-panel p{
+	color: #444;
+	margin-bottom: 0;
+	font-size: 12px;
+	line-height: 19px;
+font-family:"OpenSansLight";
+}
+.titulo-division{
+	font-family:"OpenSans"
+	position:absolute;
+}
+
+
+/* Secciones de divisiones de trabajo */
+
+.division{
+	border-bottom: solid 4px #000000;
+    max-width: 100%;
+    height: 500px;
+	width: 100%;
+
+
+
+}
+.division h2{
+	color: #F5F3F6;
+	font-size: 45px;
+	margin: 0 0 3em 0;
+	text-align: center;
+}
+.division img{
+	width: 300px;
+    display: block;
+    margin: auto;
+}
+.autos{
+	background-image: url("../img/1.jpg");
+}
+.carpinteria{
+	background-image: url("../img/2.jpg");
+}
+.taller{
+	background-image: url("../img/5.jpg");
+	background-repeat: no-repeat;
+}
+.servicios{
+	background-image: url("../img/backpat.jpg");
+	border-bottom: solid 4px #000000;
+    height: 270px; 
+	width: 100%;
+}
+.servicios .resumen{
+	display: inline-block;
+	margin: 1em 3em 1em 5em;
+	padding: 2em 2em 2em 2em;
+	vertical-align: top;
+	width: 23%;
+
+}
+.servicios .resumen img{
+	margin: .2em 1.5em 0em 0em;
+	width: 70px;
+
+}
