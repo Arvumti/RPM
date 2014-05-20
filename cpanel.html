@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link href="css/foundation.min.css" rel="stylesheet" />        
+        <link href="css/jquery.percentageloader-0.1.css" rel="stylesheet"/>
+        <link href="css/cp.css" rel="stylesheet" />
+        
+        <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery.percentageloader-0.1.min.js" type="text/javascript"></script>
+        <script src="js/foundation.min.js" type="text/javascript"></script>
+        <script src="js/handlebars.js" type="text/javascript"></script>
+        <script src="js/cp.js" type="text/javascript"></script>
+        
+        <script type="text/template-x" id="tmp-carro">
+            {{#data}}
+            <article class='small-12 medium-6 large-3 columns pnl-carro' data-id='{{idCarro}}' data-activo='{{activo}}'>
+                <div class='row panel'>
+                    <div class='small-12 columns'>
+                        <a class='th img-logo' href='#'>
+                          <img src='img/db_imgs/{{dirImg}}'>
+                        </a>
+                    </div>
+                    <div class='small-12 columns'>
+                        <label>
+                            Titulo:
+                            <input type='text' placeholder='Nombre del carro...' class='txt-nombre' value='{{nombre}}' />
+                        </label>
+                    </div>
+                    <div class='small-6 columns'>
+                        <label>
+                            Mes:
+                            <select class='cbo-mes'>
+                                {{#GetMeses mes}}{{/GetMeses}}
+                            </select>
+                        </label>
+                    </div>
+                    <div class='small-6 columns'>
+                        <label>
+                            Año:
+                            <input type='text' class='txt-anio' placeholder='Año del carro...' value='{{anio}}' />
+                        </label>
+                    </div>
+                    <div class='small-4 columns'>
+                        <label>
+                            Kilometros/litro:
+                            <input type='text' class='txt-killit' placeholder='Kilometros por litro...' value='{{killit}}' />
+                        </label>
+                    </div>
+                    <div class='small-4 columns'>
+                        <label>
+                            Kilometraje:
+                            <input type='text' class='txt-kilometraje' placeholder='Kilometros recorridos...' value='{{kilometraje}}' />
+                        </label>
+                    </div>
+                    <div class='small-4 columns'>
+                        <label>
+                            Precio:
+                            <input type='text' class='txt-precio' placeholder='Precio del carro...' value='{{precio}}' />
+                        </label>
+                    </div>
+                    <div class='small-6 columns'>
+                        <button class='btn-guradar expand success'>Guardar</button>
+                    </div>
+                    <div class='small-6 columns'>
+                        <button class='btn-visible expand primary'>Visible</button>
+                    </div>
+                </div>
+            </article>
+            {{/data}}
+        </script>
+    </head>
+    <body>
+        <div class="loading isHidden">
+            <div id="topLoader"></div>
+        </div>
+        
+        <section id="pnlCarros" class="row special">
+            
+        </section>
+        
+        <form enctype="multipart/form-data" class="isHidden">
+            <input id="upIBottom" name="upIBottom" type="file"/>
+        </form>
+    </body>
+</html>
