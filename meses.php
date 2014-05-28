@@ -10,4 +10,6 @@ $pagos= $precio-$enganche;
 
 //mensualidades de 6 12 15 18 24 30 36
 
+echo "oh yea";
+
 ?>

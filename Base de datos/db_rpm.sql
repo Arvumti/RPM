@@ -44,23 +44,23 @@ CREATE TABLE IF NOT EXISTS `carros` (
 -- Volcado de datos para la tabla `carros`
 --
 
-INSERT INTO `carros` (`idCarro`, `dirImg`, `nombre`, `tipo`, `modelo`, `killit`, `kilometraje`, `precio`, `activo`,`detalles`) VALUES
-(1, '1.jpg', 'Tornado Blanco', 3, 2013, 100.00, 0.00, 900000.00, 1),
-(2, '2.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(3, '3.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(4, '4.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(5, '5.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(6, '6.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(7, '7.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(8, '8.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(9, '9.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(10, '10.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(11, '11.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(12, '12.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(13, '13.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(14, '14.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(15, '15.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(16, '16.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1);
+INSERT INTO `carros` (`idCarro`, `dirImg`, `nombre`, `tipo`, `modelo`, `killit`, `kilometraje`, `precio`, `detalles`,`activo`) VALUES
+(1, '1.jpg', 'Merdeces Benz', 'SUV', 2013, 100.00, 0.00, 90000.00, 'A/C, Piel, MP3, Quemacocos ', 1),
+(2, '2.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(3, '3.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(4, '4.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(5, '5.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(6, '6.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(7, '7.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(8, '8.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(9, '9.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(10, '10.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(11, '11.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(12, '12.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(13, '13.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(14, '14.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(15, '15.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
+(16, '16.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
