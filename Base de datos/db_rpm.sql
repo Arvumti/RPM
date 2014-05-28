@@ -30,12 +30,13 @@ CREATE TABLE IF NOT EXISTS `carros` (
   `idCarro` int(11) NOT NULL AUTO_INCREMENT,
   `dirImg` varchar(500) DEFAULT NULL,
   `nombre` varchar(100) DEFAULT NULL,
-  `mes` int(11) DEFAULT NULL,
-  `anio` int(11) DEFAULT NULL,
+  `tipo` varchar(11) DEFAULT NULL,
+  `modelo` int(11) DEFAULT NULL,
   `killit` decimal(18,2) DEFAULT NULL,
   `kilometraje` decimal(18,2) DEFAULT NULL,
   `precio` decimal(18,2) DEFAULT NULL,
   `activo` int(1) DEFAULT '1',
+  `detalles` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idCarro`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
@@ -43,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `carros` (
 -- Volcado de datos para la tabla `carros`
 --
 
-INSERT INTO `carros` (`idCarro`, `dirImg`, `nombre`, `mes`, `anio`, `killit`, `kilometraje`, `precio`, `activo`) VALUES
+INSERT INTO `carros` (`idCarro`, `dirImg`, `nombre`, `tipo`, `modelo`, `killit`, `kilometraje`, `precio`, `activo`,`detalles`) VALUES
 (1, '1.jpg', 'Tornado Blanco', 3, 2013, 100.00, 0.00, 900000.00, 1),
 (2, '2.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),
 (3, '3.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 1),

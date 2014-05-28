@@ -1690,9 +1690,9 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+
   height: 34px;
-  padding: 10px 12px;
+  
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;

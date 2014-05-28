@@ -27,7 +27,7 @@ img { max-width:100% !important; height:auto !important}
 
 
 body {
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Open Sans';
 	color:#4f5e62;
 	font-size:16px;
 	line-height:1.6em;
@@ -1073,11 +1073,11 @@ font-size: 25px;}
  /* FORMLARIO COSTOS*/
 
 .costo{
-border-radius: 5px;
+border-radius: 3px;
 height: 20px;
-margin: 1em 2em 3em 1em;
-padding: 5px 10px 20px 10px;
-width: 300px;
+margin: 1em 2em 2em 0.7em;
+padding: 5px 10px 20px 1em;
+width: 200px;
 }
 
 .control_select{
@@ -1163,7 +1163,9 @@ vertical-align: top;
 }
 
 
-
+.contacto-formulario {
+	width: 100%;
+}
 
 
 

@@ -7,7 +7,7 @@ $res = Array();
 $json = json_decode($_POST["data"]);
 
 if(!$json) {
-    $pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, mes, anio, killit, kilometraje, precio, activo FROM carros');
+    $pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, tipo, modelo, killit, kilometraje, precio, activo, detalles FROM carros');
     $res = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
 }
 else {
@@ -36,12 +36,14 @@ else {
         $res[0] = " UPDATE carros 
                     SET dirImg = '".($json->{"dirImg"})."', 
                         nombre = '".($json->{"nombre"})."', 
-                        mes = '".($json->{"mes"})."', 
-                        anio = '".($json->{"anio"})."',
+                        tipo = '".($json->{"tipo"})."', 
+                        modelo = '".($json->{"modelo"})."',
                         killit = '".($json->{"killit"})."', 
                         kilometraje = '".($json->{"kilometraje"})."', 
                         precio = '".($json->{"precio"})."', 
                         activo = '".($json->{"activo"})."'
+                        detalles = '".($json->{"detalles"})."'
+
                     WHERE idCarro = '".($json->{"idCarro"})."'";
         
         $res = pdoExec($res);

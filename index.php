@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
 header('Content-Type: text/html; charset=utf-8');
 include("funciones_db.php");
 
-$pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, mes, anio, killit, kilometraje, precio 
+$pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, tipo, modelo, killit, kilometraje, precio 
                     FROM carros
                     WHERE activo = 1');
 $autos = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +19,7 @@ for($i=0; $i<count($autos); $i++) {
             </div>
             <div class='ficha_tecnica'>
                 <h3><a href='#'>".$autos[$i]['nombre']."</a></h3>
-                <div class='datos_auto_fila'><span>Fecha:</span> ".$autos[$i]['mes'].$autos[$i]['anio']."</div>
+                <div class='datos_auto_fila'><span>Modelo:</span> ".$autos[$i]['modelo']."</div>
                 <div class='datos_auto_fila'><span>Kilómetros por litro:</span> ".$autos[$i]['killit']." km/lt</div>
                 <div class='datos_auto_fila'><span>Kilometraje</span> ".$autos[$i]['kilometraje']."</div>
                 <div class='precio_auto'>$".$autos[$i]['precio']."</div>
@@ -45,7 +45,7 @@ for($i=0; $i<count($autos); $i++) {
 <title>RPM Motors - Venta de automóviles a los mejores precios de Durango</title>
 
 <link rel="shortcut icon" href="#">
-
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href="css/estilo.css" media="screen" rel="stylesheet">
 <link href="css/screen.css" media="screen" rel="stylesheet">
 <link href="css/bootstrap.css" media="screen" rel="stylesheet">
@@ -83,16 +83,13 @@ for($i=0; $i<count($autos); $i++) {
                 start       :   '#start',
                 mousestop   :   true,
             });
-            
-            
+                       
             $('.autos_item .autos_imagen a').on('click', function() {
                 TINY.box.show({iframe:'autos.html',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
             });
         });
     </script>
-<script type="text/javascript">
 
-</script>
 </head>
 
 <body>
@@ -246,11 +243,9 @@ for($i=0; $i<count($autos); $i++) {
 		<h2 class="titulo_secciones">Calcula las mensualidades. </h2>
       
         <form id="calculo" name="calculo" action="meses.php" method="post" class="formulario_pago">
-            
-            <input id="txtCosto"name="txtCosto"type="Text"class="costo form-control"  placeholder="Escriba el Precio del auto" required/>
-     
+             <input id="txtCosto"name="txtCosto"type="Text"class="costo form-control"  placeholder="Escriba el Precio del auto" required/>
 
-            <select id="sltMeses" name="sltMeses"class="form-control control_select">
+             <select id="sltMeses" name="sltMeses"class="form-control control_select">
                 <option>Seleccione las mensualidades</option>
                 <option value="12">12 </option>
                 <option value="15">15 </option>
@@ -260,7 +255,8 @@ for($i=0; $i<count($autos); $i++) {
                 <option value="36">36 </option>
 
 
-            </select>
+             </select>
+
             <input id="btnCalcular" class="btn btn-danger btn-lg" value="Calcular"/>
 
             
