@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link href="css/foundation.min.css" rel="stylesheet" />        
         <link href="css/jquery.percentageloader-0.1.css" rel="stylesheet"/>
+        <link href="css/font-awesome.css" rel="stylesheet" />
         <link href="css/cp.css" rel="stylesheet" />
         
         <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
@@ -24,46 +25,52 @@
                     <div class='small-12 columns'>
                         <label>
                             Titulo:
-                            <input type='text' placeholder='Nombre del carro...' class='txt-nombre' value='{{nombre}}' />
+                            <input type='text' placeholder='Nombre del carro...' class='txt-nombre' value='{{nombre}}' {{#isActivo activo}}{{/isActivo}} />
+                        </label>
+                    </div>
+                    <div class='small-12 columns'>
+                        <label>
+                            Detalle:
+                            <textarea placeholder='Detalle del carro...' class='txa-detalle' {{#isActivo activo}}{{/isActivo}}>{{detalles}}</textarea>
                         </label>
                     </div>
                     <div class='small-6 columns'>
                         <label>
                             Mes:
-                            <select class='cbo-mes'>
-                                {{#GetMeses mes}}{{/GetMeses}}
+                            <select class='cbo-tipo' {{#isActivo activo}}{{/isActivo}}>
+                                {{#GetMeses tipo}}{{/GetMeses}}
                             </select>
                         </label>
                     </div>
                     <div class='small-6 columns'>
                         <label>
                             Modelo:
-                            <input type='text' class='txt-anio' placeholder='Modelo...' value='{{anio}}' />
+                            <input type='text' class='txt-modelo' placeholder='Modelo...' value='{{modelo}}' {{#isActivo activo}}{{/isActivo}} />
                         </label>
                     </div>
                     <div class='small-4 columns'>
                         <label>
                             Km/lt:
-                            <input type='text' class='txt-killit' placeholder='Km/lt...' value='{{killit}}' />
+                            <input type='text' class='txt-killit' placeholder='Km/lt...' value='{{killit}}' {{#isActivo activo}}{{/isActivo}} />
                         </label>
                     </div>
                     <div class='small-4 columns'>
                         <label>
                             Kilometraje:
-                            <input type='text' class='txt-kilometraje' placeholder='Kilometraje...' value='{{kilometraje}}' />
+                            <input type='text' class='txt-kilometraje' placeholder='Kilometraje...' value='{{kilometraje}}' {{#isActivo activo}}{{/isActivo}} />
                         </label>
                     </div>
                     <div class='small-4 columns'>
                         <label>
                             Precio:
-                            <input type='text' class='txt-precio' placeholder='Precio...' value='{{precio}}' />
+                            <input type='text' class='txt-precio' placeholder='Precio...' value='{{precio}}' {{#isActivo activo}}{{/isActivo}} />
                         </label>
                     </div>
                     <div class='small-6 columns'>
-                        <button class='btn-guradar expand success'>Guardar</button>
+                        <button class='btn-guradar expand success' {{#isActivo activo}}{{/isActivo}}><i class='fa fa-save'></i> Guardar</button>
                     </div>
                     <div class='small-6 columns'>
-                        <button class='btn-visible expand primary'>Visible</button>
+                        <button class='btn-visible expand primary'><i class='fa fa-eye{{#isActivoIco activo}}{{/isActivoIco}}'></i> Visible</button>
                     </div>
                 </div>
             </article>

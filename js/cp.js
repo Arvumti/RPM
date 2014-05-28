@@ -1,5 +1,6 @@
 $(document).on('ready', inicio);
 var app = {},
+    tmp = null,
     $topLoader = null,
     tmpCarro = function(){},
     meses = ['', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
@@ -21,6 +22,21 @@ function inicio() {
     
     $('#pnlCarros').on('click', '.btn-guradar', function(e) {
         var elem = $(e.currentTarget).parents('.pnl-carro');
+        saveCarro(elem);
+    });
+    
+    $('#pnlCarros').on('click', '.btn-visible', function(e) {
+        var elem = $(e.currentTarget).parents('.pnl-carro');
+        if(elem.data('activo') == 1) {
+            elem.data('activo', 0);
+            elem.find('textarea, input, select, .btn-guradar').attr('disabled', 'disabled');
+            $(e.currentTarget).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+        }
+        else {
+            elem.data('activo', 1);
+            elem.find('textarea, input, select, .btn-guradar').removeAttr('disabled', 'disabled');
+            $(e.currentTarget).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+        }
         saveCarro(elem);
     });
     
@@ -53,7 +69,7 @@ function getCarros() {
     }
 }
 
-function saveCarro(elem) {    
+function saveCarro(elem) { 
     var elemFile = $('form input:file')[0],
         file = elemFile.files[0],
         type = file ? file.type : '';
@@ -62,8 +78,9 @@ function saveCarro(elem) {
         idCarro     : elem.data('id'),
         dirImg      : elem.find('.img-logo').find('img').attr('src').substring(12),
         nombre      : elem.find('.txt-nombre').val(),
-        mes         : elem.find('.cbo-mes').val(),
-        anio        : elem.find('.txt-anio').val(),
+        detalles    : elem.find('.txa-detalle').val(),
+        tipo        : elem.find('.cbo-tipo').val(),
+        modelo      : elem.find('.txt-modelo').val(),
         killit      : elem.find('.txt-killit').val(),
         kilometraje : elem.find('.txt-kilometraje').val(),
         precio      : elem.find('.txt-precio').val(),
@@ -86,8 +103,10 @@ function saveCarro(elem) {
             return myXhr;
         },
         success: function(data) {
-            if(data.res == 1)
+            if(data.res == 1 && data.img)
                 app.current.find('.img-logo img').attr('src', 'img\\db_imgs\\' + data.img);
+            
+            console.log(data.err);
             
             $('form')[0].reset();
             app.current = null;
@@ -150,3 +169,13 @@ function lShow() {
 function lHide() {
     $('.loading').addClass('isHidden');
 }
+
+Handlebars.registerHelper('isActivoIco', function(activo){
+    if(activo == 0)
+      return '-slash';
+});
+
+Handlebars.registerHelper('isActivo', function(activo){
+    if(activo == 0)
+      return 'disabled';
+});
