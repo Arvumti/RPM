@@ -3,7 +3,19 @@ error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
 header('Content-Type: text/html; charset=utf-8');
 include("funciones_db.php");
 
-$pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, tipo, modelo, killit, kilometraje, precio 
+$pdoArr = pdoQuery('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, precio,
+                            CASE tipo   WHEN 1 THEN "ENE"
+                                        WHEN 2 THEN "FEB"
+                                        WHEN 3 THEN "MAR"
+                                        WHEN 4 THEN "ABR"
+                                        WHEN 5 THEN "MAY"
+                                        WHEN 6 THEN "JUN"
+                                        WHEN 7 THEN "JUL"
+                                        WHEN 8 THEN "AGO"
+                                        WHEN 9 THEN "SEP"
+                                        WHEN 10 THEN "OCT"
+                                        WHEN 11 THEN "NOV"
+                                        ELSE "DIC" END tipo
                     FROM carros
                     WHERE activo = 1');
 $autos = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +31,7 @@ for($i=0; $i<count($autos); $i++) {
             </div>
             <div class='ficha_tecnica'>
                 <h3><a href='#'>".$autos[$i]['nombre']."</a></h3>
-                <div class='datos_auto_fila'><span>Modelo:</span> ".$autos[$i]['modelo']."</div>
+                <div class='datos_auto_fila'><span>Modelo:</span> ".$autos[$i]['tipo'].' '.$autos[$i]['modelo']."</div>
                 <div class='datos_auto_fila'><span>Kilómetros por litro:</span> ".$autos[$i]['killit']." km/lt</div>
                 <div class='datos_auto_fila'><span>Kilometraje</span> ".$autos[$i]['kilometraje']."</div>
                 <div class='precio_auto'>$".$autos[$i]['precio']."</div>
