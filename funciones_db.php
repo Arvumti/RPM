@@ -1,7 +1,7 @@
 <?php
 function get_pdo()
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=db_rpm', 'root', 'toor', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"));
+    $pdo = new PDO('mysql:host=localhost;dbname=db_rpm', 'root', 'root', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"));
 	return $pdo;
 }
 
