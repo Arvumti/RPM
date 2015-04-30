@@ -3,7 +3,7 @@ var app = {},
     tmp = null,
     $topLoader = null,
     tmpCarro = function(){},
-    meses = ['', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
+    meses = [' ', 'Hatchback', 'Sedán', 'SUV', 'Pickup', 'Convertible', 'Camión','Motocicleta','Deportivo' ];
 
 function inicio() {
     $(document).foundation();
