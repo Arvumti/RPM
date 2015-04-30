@@ -7,8 +7,7 @@ $res = Array();
 $json = json_decode($_POST["data"]);
 
 if(!$json) {
-    $pdoArr = pdoQuery('SELECT idCarro, dirImg, nombre, tipo, modelo, killit, kilometraje, precio, activo, detalles FROM carros');
-    $res = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
+    $res = select('SELECT idCarro, dirImg, nombre, tipo, modelo, killit, kilometraje, precio, activo, detalles FROM carros');
 }
 else if($_FILES["upIBottom"]["size"] > 0) {
     $extAll = explode('/', $_FILES["upIBottom"]["type"]);
@@ -20,7 +19,7 @@ else if($_FILES["upIBottom"]["size"] > 0) {
                 activo = ".$json->{"activo"}."
                 WHERE idCarro = ".$json->{"idCarro"};
     
-    $res = pdoExec($res);
+    $res = execQuery($res);
     if($res["res"] == 1) {
         move_uploaded_file($_FILES["upIBottom"]["tmp_name"], "img/db_imgs/".$nombre);
         
@@ -45,7 +44,7 @@ else {
 
                 WHERE idCarro = '".($json->{"idCarro"})."'";
     
-    $res = pdoExec($res);
+    $res = execQuery($res);
 }
 
 echo json_encode($res);

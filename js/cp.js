@@ -53,6 +53,7 @@ function getCarros() {
     $.getJSON('routes.php', {data:1}).done(done).fail(fail);
     
     function done(data) {
+        debugger
         var carros = tmpCarro({data:data});
         $('#pnlCarros').append(carros);
         

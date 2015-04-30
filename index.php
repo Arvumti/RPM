@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
 header('Content-Type: text/html; charset=utf-8');
 include("funciones_db.php");
 
-$pdoArr = pdoQuery('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, precio,
+$autos = select('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, precio,
                             CASE tipo   WHEN 1 THEN "ENE"
                                         WHEN 2 THEN "FEB"
                                         WHEN 3 THEN "MAR"
@@ -18,7 +18,7 @@ $pdoArr = pdoQuery('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje
                                         ELSE "DIC" END tipo
                     FROM carros
                     WHERE activo = 1');
-$autos = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
+
 $tope = floor(count($autos)/2);
 
 $carrosP1 = "";
