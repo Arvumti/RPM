@@ -15,12 +15,18 @@
         
         <script type="text/template-x" id="tmp-carro">
             {{#data}}
-            <article class='small-12 medium-6 large-3 columns pnl-carro' data-id='{{idCarro}}' data-activo='{{activo}}'>
+            <article class='large-4 columns pnl-carro' data-id='{{idCarro}}' data-activo='{{activo}}'>
                 <div class='row panel'>
                     <div class='small-12 columns'>
+                        <h6>       Fotografía principal                 </h6>
                         <a class='th img-logo' href='#'>
                           <img src='img/db_imgs/{{dirImg}}'>
                         </a>
+                    </div>
+                    <div class='small-12 columns'>
+                        <h6>       Galería de imagenes    </h6>
+                        <input type="file" id="file" name="files[]" multiple="multiple" accept="image/*">
+
                     </div>
                     <div class='small-12 columns'>
                         <label>
@@ -30,18 +36,26 @@
                     </div>
                     <div class='small-12 columns'>
                         <label>
+                            Tipo:
+                            <select class='cbo-tipo' {{#isActivo activo}}{{/isActivo}}>
+                                {{#GetMeses tipo}}{{/GetMeses}}
+                            </select>
+                        </label>
+                    </div>
+                    <div class='small-12 columns'>
+                        <label>
                             Detalles:
                             <textarea placeholder='Detalles del carro...' class='txa-detalle' {{#isActivo activo}}{{/isActivo}}>{{detalles}}</textarea>
                         </label>
                     </div>
                    
-                    <div class='small-5 columns'>
+                    <div class='small-6 columns'>
                         <label>
                             Modelo:
                             <input type='text' class='txt-modelo' placeholder='Modelo...' value='{{modelo}}' {{#isActivo activo}}{{/isActivo}} />
                         </label>
                     </div>
-                    <div class='small-5 columns'>
+                    <div class='small-6 columns'>
                         <label>
                             Km/lt:
                             <input type='text' class='txt-killit' placeholder='Km/lt...' value='{{killit}}' {{#isActivo activo}}{{/isActivo}} />

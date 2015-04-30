@@ -1,3 +1,26 @@
+<?php 
+//error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
+//header('Content-Type: text/html; charset=utf-8');
+//include("funciones_db.php");
+
+
+
+//$pdoArr = pdoQuery('SELECT  idCarro, dirGal, FROM galeria WHERE ');
+//$autoGal = $pdoArr->fetchAll(PDO::FETCH_ASSOC);
+
+
+//$galeriaCar = "";
+
+//for($i=0; $i<count($imagen); $i++) {
+  //  $fotos= "
+    //        <li data-thumb='img/db_imgs/".$imagen[$i]"['dirGal'].'">
+      //        <img src='img/db_imgs/".$imagen[$i]"['dirGal'].'"  />
+        //    </li>";
+    
+   
+//}
+
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -11,8 +34,7 @@
 <link rel="shortcut icon" href="#">
 
 <link href="css/estilo.css" media="screen" rel="stylesheet">
-<link href="css/screen.css" media="screen" rel="stylesheet">
-<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="foundation/css/foundation.css" media="screen" rel="stylesheet">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
 <script src="js/modernizr.js"></script>
@@ -39,9 +61,7 @@
      <section class="slider">
         <div class="flexslider">
           <ul class="slides">
-            <li data-thumb="img/temp/slider_1_1.jpg">
-              <img src="img/temp/slider_1_1.jpg" />
-            </li>
+            
             <li data-thumb="img/temp/slider_1_2.jpg">
               <img src="img/temp/slider_1_2.jpg" />
             </li>
@@ -56,63 +76,28 @@
         </div>
       </section>
        <aside>
-        <div class="cf">
-          <h3>Thumbnail ControlNav Pattern</h3>
-          <ul class="toggle cf">
-            <li class="js"><a href="#view-js">JS</a></li>
-            <li class="html"><a href="#view-html">HTML</a></li>
-          </ul>
-        </div>
-        <div id="view-js" class="code">
-          <pre class="brush: js; toolbar: false; gutter: false;">
-            // Can also be used with $(document).ready()
-            $(window).load(function() {
-              $('.flexslider').flexslider({
-                animation: "slide",
-                controlNav: "thumbnails"
-              });
-            });
-          </pre>
-        </div>
-        <div id="view-html" class="code">
-          <pre class="brush: xml; toolbar: false; gutter: false;">
-            &lt;!-- Place somewhere in the &lt;body&gt; of your page -->
-            &lt;div class="flexslider">
-              &lt;ul class="slides">
-                &lt;li data-thumb="slide1-thumb.jpg">
-                  &lt;img src="slide1.jpg" />
-                &lt;/li>
-                &lt;li data-thumb="slide2-thumb.jpg">
-                  &lt;img src="slide2.jpg" />
-                &lt;/li>
-                &lt;li data-thumb="slide3-thumb.jpg">
-                  &lt;img src="slide3.jpg" />
-                &lt;/li>
-                &lt;li data-thumb="slide4-thumb.jpg">
-                  &lt;img src="slide4.jpg" />
-                &lt;/li>
-              &lt;/ul>
-            &lt;/div>
-          </pre>
-        </div>
+       
+        
+    
       </aside>
         </div>          
 	</div>
   
 </div>
-<div class="zona_autos zona_gris clearfix">
-            <h2 class="titulo_secciones">Ficha Técnica del Auto</h2>
-	
-   <div class="ficha_tecnica_autos">
-                          <h3><a href="#">Alfa Romeo Mito</a></h3>
-                            <div class="datos_auto_fila_2"><span>Fecha:</span> FEB 2013</div>
-                            <div class="datos_auto_fila_2"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
-                            <div class="datos_auto_fila_2"><span>Kilometraje</span> 170,443</div>
-                            <div class="precio_auto_2">$32233.690</div>
-                        </div>
-	     
-       
-	</div>
+<div class="row"> 
+  <div class="zona_autos zona_gris clearfix">
+     <h2 class="titulo_secciones">Ficha Técnica del Auto</h2>
+     
+     <div class="ficha_tecnica_autos">
+        <h3>Alfa Romeo Mito</h3>
+        <div class="datos_auto_fila_2"><span>Fecha:</span> FEB 2013</div>
+        <div class="datos_auto_fila_2"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
+        <div class="datos_auto_fila_2"><span>Kilometraje</span> 170,443</div>
+        <div class="precio_auto_2">$32233.690</div>
+     </div>
+  </div>
+
+</div>
 
 	
     
