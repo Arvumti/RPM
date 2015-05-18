@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 include("funciones_db.php");
 
 $autos = select('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, precio,
-                            CASE tipo   WHEN 1 THEN "ENE"
+                            CASE tipo   /*WHEN 1 THEN "ENE"
                                         WHEN 2 THEN "FEB"
                                         WHEN 3 THEN "MAR"
                                         WHEN 4 THEN "ABR"
@@ -15,7 +15,16 @@ $autos = select('SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, p
                                         WHEN 9 THEN "SEP"
                                         WHEN 10 THEN "OCT"
                                         WHEN 11 THEN "NOV"
-                                        ELSE "DIC" END tipo
+                                        ELSE "DIC" */
+                                        WHEN 1 THEN "Hatchback"
+                                        WHEN 2 THEN "Sedán"
+                                        WHEN 3 THEN "SUV"
+                                        WHEN 4 THEN "Pickup"
+                                        WHEN 5 THEN "Convertible"
+                                        WHEN 6 THEN "Camión"
+                                        WHEN 7 THEN "Motocicleta"
+                                        WHEN 8 THEN "Deportivo"
+                            END tipo
                     FROM carros
                     WHERE activo = 1');
 
@@ -69,8 +78,6 @@ for($i=0; $i<count($autos); $i++) {
 
 
 <script src="foundation/js/vendor/jquery.js"></script>
-<script src="foundation/js/foundation/foundation.js"></script>
-<script src="foundation/js/foundation/foundation.reveal.js"></script>
 <script src="js/libs/modernizr.min.js"></script>
 <script src="js/libs/respond.min.js"></script>					 
 <script src="js/libs/jquery.min.js"></script>
@@ -88,12 +95,12 @@ for($i=0; $i<count($autos); $i++) {
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.totemticker.js"></script>
-<script type="text/javascript">
-      $(document).foundation();
-</script>
+<script src="foundation/js/foundation/foundation.js"></script>
+<script src="foundation/js/foundation/foundation.reveal.js"></script>
     <script type="text/javascript">
         
         $(document).on('ready', function() {
+
             $('#vertical-ticker').totemticker({
                 row_height  :   '100px',
                 next        :   '#ticker-next',
@@ -104,8 +111,9 @@ for($i=0; $i<count($autos); $i++) {
             });
                        
             $('.autos_item .autos_imagen a').on('click', function() {
-                TINY.box.show({iframe:'autos.php',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
+                TINY.box.show({iframe:'autos.php?id=16',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
             });
+            $(document).foundation();
         });
     </script>
 

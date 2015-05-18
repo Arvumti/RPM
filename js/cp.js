@@ -7,7 +7,62 @@ var app = {},
 
 function inicio() {
     $(document).foundation();
-    console.log(1)
+    console.log(1);
+
+    $('.btn-nuevo').on('click', function(){
+        $.getJSON('routes.php', {datas:{request:4}}).done(done);
+
+        function done(data) {
+            var data = {
+                idCarro: data.idkey,
+                activo: 1,
+            };
+            var carros = tmpCarro({data:data});
+            $('#pnlCarros').prepend(carros);
+        }
+    });
+    $('#pnlCarros').on('click', '.btn-eliminar', function(e){
+        var id = $(e.currentTarget).parents('article.pnl-carro').data('id');
+        $.getJSON('routes.php', {datas:{request:3, id:id}}).done(done);
+
+        function done(data) {
+            $(e.currentTarget).parents('article.pnl-carro').remove();
+        }
+    });
+
+    $('.gv-galeria tbody').on('click', 'i', function(e) {
+        var id = $(e.currentTarget).data('id');
+        var direccion = $(e.currentTarget).data('direccion');
+
+        $.getJSON('routes.php', {datas:{request:2, id:id, direccion:direccion}}).done(done);
+
+        function done(data) {
+            $(e.currentTarget).parents('tr').remove();
+        }
+    });
+    $('.files-modal').on('change', function() {
+        saveGaleria(app.currentGalery, $('.form-galeria'));
+    });
+    $('.btn-agregar-modal').on('click', function() {
+        $('.files-modal').click();
+    });
+    $('.btn-cerrar-modal').on('click', function() {
+        app.currentGalery = null;
+        $('.reveal-modal-galery').foundation('reveal', 'close');
+    });
+    $('#pnlCarros').on('click', '.btn-galeria', function(e) {
+        app.currentGalery = $(e.currentTarget);
+        var id = app.currentGalery.data('id');
+        $.getJSON('routes.php', {datas:{request:1, idCarro:id}}).done(done);
+
+        function done(data) {
+            var trs = tmpTrGaleria({data:data});
+            $('.gv-galeria tbody').html(trs);
+        }
+
+
+        $('.reveal-modal-galery').foundation('reveal', 'open');
+    });
     
     Handlebars.registerHelper('GetMeses', function(mes){
         var options = '';
@@ -17,12 +72,13 @@ function inicio() {
         return options;
 	});    
     tmpCarro = Handlebars.compile($('#tmp-carro').html());
+    tmpTrGaleria = Handlebars.compile($('#tmp-tr-galeria').html());
     
     getCarros();
     
     $('#pnlCarros').on('click', '.btn-guradar', function(e) {
         var elem = $(e.currentTarget).parents('.pnl-carro');
-        saveCarro(elem);
+        saveCarro(elem, 7);
     });
     
     $('#pnlCarros').on('click', '.btn-visible', function(e) {
@@ -37,11 +93,17 @@ function inicio() {
             elem.find('textarea, input, select, .btn-guradar').removeAttr('disabled', 'disabled');
             $(e.currentTarget).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
         }
-        saveCarro(elem);
+        saveCarro(elem, 7);
+    });
+    $('#pnlCarros').on('click', '.pnl-carro .img-logo', function(e) { 
+        e.preventDefault();
+        app.current = $(e.currentTarget).parents('.pnl-carro');
+        
+        $('#upIBottom').click();
     });
     
     $('#upIBottom').on('change', function() {
-        saveCarro(app.current);
+        saveCarro(app.current, 5);
     });
     
     $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0, onProgressUpdate : function(val) {
@@ -53,16 +115,8 @@ function getCarros() {
     $.getJSON('routes.php', {data:1}).done(done).fail(fail);
     
     function done(data) {
-        debugger
         var carros = tmpCarro({data:data});
         $('#pnlCarros').append(carros);
-        
-        $('.pnl-carro').find('.img-logo').on('click', function(e) { 
-            e.preventDefault();
-            app.current = $(e.currentTarget).parents('.pnl-carro');
-            
-            $('#upIBottom').click();
-        });
     }
     
     function fail(xhr) {
@@ -70,8 +124,55 @@ function getCarros() {
     }
 }
 
-function saveCarro(elem) { 
-    var elemFile = $('form input:file')[0],
+function saveGaleria(elem, form) {         
+    var json = {
+        idCarro     : elem.data('id'),
+        request     : 6,
+    };
+    
+    var formData = new FormData(form[0]);
+    formData.append("data", JSON.stringify(json));
+    
+    lShow();
+    
+    $.ajax({
+        url: 'routes.php',  //Server script to process data
+        type: 'POST',
+        xhr: function() {  // Custom XMLHttpRequest
+            var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // Check if upload property exists
+                myXhr.upload.addEventListener('progress', progressHandlingFunction, false); // For handling the progress of the upload
+            }
+            return myXhr;
+        },
+        success: function(data) {
+            lHide();
+            form[0].reset();
+            if(data.res == 1) {
+                var trs = tmpTrGaleria({data:data.files});
+                $('.gv-galeria tbody').append(trs);
+            }
+            
+            console.log(data.err);
+        },
+        error: function(xhr) {
+            lHide();
+            console.log(xhr);
+        },
+        // Form data
+        data: formData,
+        //Options to tell jQuery not to process data or worry about content-type.
+        dataType: "json",
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+    
+    return json;
+}
+
+function saveCarro(elem, request) { 
+    var elemFile = $('form.global-form-file input:file')[0],
         file = elemFile.files[0],
         type = file ? file.type : '';
         
@@ -85,10 +186,11 @@ function saveCarro(elem) {
         killit      : elem.find('.txt-killit').val(),
         kilometraje : elem.find('.txt-kilometraje').val(),
         precio      : elem.find('.txt-precio').val(),
-        activo      : elem.data('activo')
+        activo      : elem.data('activo'),
+        request     : request || 5,
     };
     
-    var formData = new FormData($('form')[0]);
+    var formData = new FormData($('form.global-form-file')[0]);
     formData.append("data", JSON.stringify(json));
     
     lShow();
@@ -109,7 +211,7 @@ function saveCarro(elem) {
             
             console.log(data.err);
             
-            $('form')[0].reset();
+            $('form.global-form-file')[0].reset();
             app.current = null;
             lHide();
         },

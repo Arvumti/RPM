@@ -20,6 +20,46 @@
    
 //}
 
+error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
+header('Content-Type: text/html; charset=utf-8');
+include("funciones_db.php");
+
+$id = $_GET['id'];
+
+$auto = select("  SELECT  idCarro, dirImg, nombre, modelo, killit, kilometraje, precio,
+                            CASE tipo   WHEN 1 THEN 'Hatchback'
+                                        WHEN 2 THEN 'Sedán'
+                                        WHEN 3 THEN 'SUV'
+                                        WHEN 4 THEN 'Pickup'
+                                        WHEN 5 THEN 'Convertible'
+                                        WHEN 6 THEN 'Camión'
+                                        WHEN 7 THEN 'Motocicleta'
+                                        WHEN 8 THEN 'Deportivo'
+                            END tipo
+                  FROM carros
+                  WHERE idCarro = {$id}");
+$auto = $auto[0];
+
+$carro = '';
+if(strlen($auto['dirImg']) > 0)
+  $carro = '
+            <li data-thumb="img/db_imgs/'.$auto['dirImg'].'">
+              <img src="img/db_imgs/'.$auto['dirImg'].'" />
+            </li>
+           ';
+
+$galeria = select(" SELECT  direccion
+                    FROM galerias
+                    WHERE idCarro = {$id}");
+
+for ($i=0; $i < count($galeria); $i++) { 
+  $carro .= '
+          <li data-thumb="'.$galeria[$i]['direccion'].'">
+            <img src="'.$galeria[$i]['direccion'].'" />
+          </li>
+         ';
+}
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -61,17 +101,7 @@
      <section class="slider">
         <div class="flexslider">
           <ul class="slides">
-            
-            <li data-thumb="img/temp/slider_1_2.jpg">
-              <img src="img/temp/slider_1_2.jpg" />
-            </li>
-            <li data-thumb="img/temp/slider_1_3.jpg">
-              <img src="img/temp/slider_1_3.jpg" />
-            </li>
-             <li data-thumb="img/temp/slider_1_3.jpg">
-              <img src="img/temp/slider_1_3.jpg" />
-            </li>
-          
+            <?php echo $carro; ?>          
           </ul>
         </div>
       </section>
@@ -89,11 +119,12 @@
      <h2 class="titulo_secciones">Ficha Técnica del Auto</h2>
      
      <div class="ficha_tecnica_autos">
-        <h3>Alfa Romeo Mito</h3>
-        <div class="datos_auto_fila_2"><span>Fecha:</span> FEB 2013</div>
-        <div class="datos_auto_fila_2"><span>Kilómetros por litro:</span> 50,6 km/lt</div>
-        <div class="datos_auto_fila_2"><span>Kilometraje</span> 170,443</div>
-        <div class="precio_auto_2">$32233.690</div>
+        <h3><?php echo $auto['nombre']; ?></h3>
+        <div class="datos_auto_fila_2"><span>Tipo:</span> <?php echo $auto['tipo']; ?></div>
+        <div class="datos_auto_fila_2"><span>Modelo:</span> <?php echo $auto['modelo']; ?></div>
+        <div class="datos_auto_fila_2"><span>Kilómetros por litro:</span> <?php echo $auto['killit']; ?> km/lt</div>
+        <div class="datos_auto_fila_2"><span>Kilometraje</span> <?php echo $auto['kilometraje']; ?></div>
+        <div class="precio_auto_2">$<?php echo $auto['precio']; ?></div>
      </div>
   </div>
 

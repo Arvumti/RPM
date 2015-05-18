@@ -45,3 +45,22 @@ body, html {
 .isHidden {
     display: none;
 }
+
+
+.table.table-custom {
+    width: 100%;
+}
+
+.table.table-custom .min {
+    width: 20px !important;
+}
+
+.table.table-custom td {
+    cursor: pointer;
+    text-align: center;
+}
+
+.table.table-custom img {
+    height: 100px;
+    width: 300px;
+}
