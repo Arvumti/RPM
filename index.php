@@ -37,7 +37,7 @@ for($i=0; $i<count($autos); $i++) {
        <div class='cien'> 
         <div class='autos_item' data-id='".$autos[$i]['idCarro']."'>
             <div class='autos_imagen'>
-               <a href='#'><img src='img/db_imgs/".$autos[$i]['dirImg']."' alt=''></a>
+               <a href='#' data-id='".$autos[$i]['idCarro']."'><img src='img/db_imgs/".$autos[$i]['dirImg']."' alt=''></a>
             </div>
             <div class='ficha_tecnica'>
                 <h3><a href='#'>".$autos[$i]['nombre']."</a></h3>
@@ -110,8 +110,9 @@ for($i=0; $i<count($autos); $i++) {
                 mousestop   :   true,
             });
                        
-            $('.autos_item .autos_imagen a').on('click', function() {
-                TINY.box.show({iframe:'autos.php?id=16',boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
+            $('.autos_item .autos_imagen a').on('click', function(e) {
+                var id = $(e.currentTarget).data('id');
+                TINY.box.show({iframe:'autos.php?id=' + id,boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
             });
             $(document).foundation();
         });
