@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 
 -- -------------------------------------------------
-
+USE db_rpm;
 --
 -- Estructura de tabla para la tabla `carros`
 --

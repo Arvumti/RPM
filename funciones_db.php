@@ -1,7 +1,7 @@
 <?php
 function get_con() {
     //$mysqli = new mysqli("arvumti.ipagemysql.com", "cecyted", "123", "db_cec");
-    $mysqli = new mysqli("localhost", "root", "toor", "db_rpm");
+    $mysqli = new mysqli("localhost", "root", "root", "db_rpm");
     if ($mysqli->connect_errno) {
         return $mysqli->connect_erro;
     }

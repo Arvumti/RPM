@@ -101,15 +101,7 @@ for($i=0; $i<count($autos); $i++) {
         
         $(document).on('ready', function() {
 
-            $('#vertical-ticker').totemticker({
-                row_height  :   '100px',
-                next        :   '#ticker-next',
-                previous    :   '#ticker-previous',
-                stop        :   '#stop',
-                start       :   '#start',
-                mousestop   :   true,
-            });
-                       
+                     
             $('.autos_item .autos_imagen a').on('click', function(e) {
                 var id = $(e.currentTarget).data('id');
                 TINY.box.show({iframe:'autos.php?id=' + id,boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
@@ -312,9 +304,40 @@ for($i=0; $i<count($autos); $i++) {
 	</div>
     <!--/ marcas -->
 <div id="mensual" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 >Awesome. I have it.</h2>
-  <p Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <h2 >Cotizador de vehículos.</h2>
+    <div class="large-6 columns">
+      <form>
+        <div class="large-6">
+            <label> Precio:
+                <input type="text" placeholder="Precio del vehículo">
+            </label>
+        </div>
+        <div class="large-6">
+            <label>Enganche:
+                <input type="text" placeholder="Enganche">
+            </label>
+        </div>
+        <div class="large-6">
+            <label> Selecciona el plazo:
+                <select>
+                  <option value="12">12</option>
+                  <option value="15">15</option>
+                  <option value="18">18</option>
+                  <option value="24">24</option>
+                  <option value="30">30</option>
+                  <option value="36">36</option>
+
+                </select>
+            </label>
+        </div>
+        <a href="" style="border-radius:5px;" class="button success">Calcular</a>
+
+      </form>
+
+    </div> 
+    <div class="large-6 columns">
+        Resultado:
+    </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 <!--/ mitad -->
