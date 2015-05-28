@@ -63,6 +63,23 @@ INSERT INTO `carros` (`idCarro`, `dirImg`, `nombre`, `tipo`, `modelo`, `killit`,
 (15, '15.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1),
 (16, '16.jpg', NULL, NULL, NULL, NULL, NULL, NULL,NULL, 1);
 
+CREATE TABLE `galerias` (
+  `idGaleria` int(11) NOT NULL AUTO_INCREMENT,
+  `direccion` varchar(500) DEFAULT NULL,
+  `idCarro` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idGaleria`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcado de datos para la tabla `galerias`
+--
+
+INSERT INTO `galerias` (`idGaleria`, `direccion`, `idCarro`) VALUES
+(3, 'img/db_imgs/1505212323450.jpg', 1),
+(5, 'img/db_imgs/1505212323452.jpg', 1),
+(6, 'img/db_imgs/1505212324120.jpg', 1),
+(7, 'img/db_imgs/1505212326000.jpg', 16);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
