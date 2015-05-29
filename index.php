@@ -101,12 +101,85 @@ for($i=0; $i<count($autos); $i++) {
         
         $(document).on('ready', function() {
 
-                     
+            $('#pagosEspeciales').addClass('oculto');
             $('.autos_item .autos_imagen a').on('click', function(e) {
                 var id = $(e.currentTarget).data('id');
                 TINY.box.show({iframe:'autos.php?id=' + id,boxid:'frameless',width:900,height:650,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}});
             });
             $(document).foundation();
+
+            $('.mensualidades').on('click', function(e) {
+                e.preventDefault();
+                var precio = $('#precioV').val();
+                var enganche = $('#engancheV').val();
+                var plazo = $('#plazoV').val();
+                if ($('#pagosEspeciales').hasClass('checked')) {
+                    // plazo = $('#pagosEspeciales').val();
+                    switch(plazo) {
+                        case "18":
+                            var res = (((precio - enganche)*1.288)-(20000))/plazo;
+                            break;
+                        case "24":
+                            var res = (((precio - enganche)*1.384)-(20000))/plazo;
+                            break;
+                        case "30":
+                            var res = (((precio - enganche)*1.48)-(20000))/plazo;
+                            break;
+                        case "36":
+                            var res = (((precio - enganche)*1.576)-(20000))/plazo;
+                            break;
+                    }
+                    var bonificacion = ((precio - enganche)-20000)*(0.016);
+                    res = res.toFixed(2);
+                    $('#resultadoV').text('$'+res + ' Bonificación de $' + bonificacion);
+                }else {
+                    switch(plazo) {
+                        case "12":
+                            var res = ((precio - enganche) * 1.12)/plazo;
+                            break;
+                        case "15":
+                            var res = ((precio - enganche) * 1.24)/plazo;
+                            break;
+                        case "18":
+                            var res = ((precio - enganche) * 1.288)/plazo;
+                            break;
+                        case "24":
+                            var res = ((precio - enganche) * 1.384)/plazo;
+                            break;
+                        case "30":
+                            var res = ((precio - enganche) * 1.48)/plazo;
+                            break;
+                        case "36":
+                            var res = ((precio - enganche) * 1.576)/plazo;
+                            break;
+                    }
+                    res = res.toFixed(2);
+                    $('#resultadoV').text('$'+res);
+                }
+
+            });
+            $('#checkV').on('change', function(e) {
+
+                if ($('#pagosEspeciales').hasClass('checked')) {
+                    $('#pagosEspeciales').removeClass('checked');
+                    $('#pagosEspeciales').addClass('oculto');
+                    $('#plazoV').html('<option value="12">12</option><option value="15">15</option><option value="18">18</option><option value="24">24</option><option value="30">30</option><option value="36">36</option>');
+                }else {
+                    $('#pagosEspeciales').addClass('checked');
+                    $('#pagosEspeciales').removeClass('oculto');
+                    $('#plazoV').html('<option value="18">18</option><option value="24">24</option><option value="30">30</option><option value="36">36</option>');
+
+                }
+
+            });
+            $('#pagosEspeciales').on('change', function(e) {
+                $('#plazoV').removeAttr('disabled');
+                if ($('#pagosEspV').val() == 1) {
+                    $('#plazoV').html('<option value="18">18</option>')
+                }else {
+                    $('#plazoV').html(' <option value="24">24</option><option value="30">30</option><option value="36">36</option>')
+                }
+            });
         });
     </script>
 
@@ -309,17 +382,28 @@ for($i=0; $i<count($autos); $i++) {
       <form>
         <div class="large-6">
             <label> Precio:
-                <input type="text" placeholder="Precio del vehículo">
+                <input id="precioV" type="text" placeholder="Precio del vehículo">
             </label>
         </div>
         <div class="large-6">
             <label>Enganche:
-                <input type="text" placeholder="Enganche">
+                <input id="engancheV" type="text" placeholder="Enganche">
+            </label>
+        </div>
+        <div class="large-2">
+            <label> Pagos Especiales:
+                <input id="checkV" type="checkbox">
             </label>
         </div>
         <div class="large-6">
+            <label id="pagosEspeciales"> Selecciona los pagos especiales:
+                <select id="pagosEspV">
+                  <option value="1">2 - $10,000 </option>
+                  <option value="2">4 - $5,000 </option>
+                </select>
+            </label>
             <label> Selecciona el plazo:
-                <select>
+                <select id="plazoV">
                   <option value="12">12</option>
                   <option value="15">15</option>
                   <option value="18">18</option>
@@ -330,13 +414,15 @@ for($i=0; $i<count($autos); $i++) {
                 </select>
             </label>
         </div>
-        <a href="" style="border-radius:5px;" class="button success">Calcular</a>
+        <a href="" style="border-radius:5px;" class="button success mensualidades">Calcular</a>
 
       </form>
 
     </div> 
     <div class="large-6 columns">
-        Resultado:
+        <label> Mensualidad:
+            <label id="resultadoV"></label>
+        </label>
     </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
